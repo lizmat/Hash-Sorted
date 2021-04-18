@@ -262,6 +262,14 @@ Hash::Sorted - customizable role for sorted Hashes
 
 =head1 DESCRIPTION
 
+This module provides the C<Hash::Sorted> role, that allows you to create
+a Hash that always keeps its keys in sorted order.  It also allows you to
+customize exactly how you would like to type your keys and/or your values.
+
+Internally, this implementation works off two arrays that are being kept
+in sync, so any standard constraints available to arrays, can be applied
+as types for the keys or values.
+
 Since C<Hash::Sorted> is a role, you can also use it as a base for creating
 your own custom implementations of hashes.
 
