@@ -5,7 +5,7 @@ use v6.c;
 use nqp;
 
 use Hash::Agnostic:ver<0.0.7>:auth<cpan:ELIZABETH>;
-use Array::Sorted::Util:ver<0.0.2>:auth<cpan:ELIZABETH>;
+use Array::Sorted::Util:ver<0.0.3>:auth<cpan:ELIZABETH>;
 
 my sub typed-array(Mu \type) {
     nqp::objprimspec(type) ?? array[type] !! Array[type]
@@ -43,7 +43,7 @@ my class KV does PredictiveIterator {
 }
 
 #--- Role using the standard &[cmp] --------------------------------------------
-role Hash::Sorted:ver<0.0.1>:auth<cpan:ELIZABETH>[
+role Hash::Sorted:ver<0.0.2>:auth<cpan:ELIZABETH>[
   ::KeyT = str, ::ValueT = Any
 ]
   does Hash::Agnostic
@@ -145,7 +145,7 @@ role Hash::Sorted:ver<0.0.1>:auth<cpan:ELIZABETH>[
 }
 
 #--- Role using a custom comparator --------------------------------------------
-role Hash::Sorted:ver<0.0.1>:auth<cpan:ELIZABETH>[
+role Hash::Sorted:ver<0.0.2>:auth<cpan:ELIZABETH>[
   ::KeyT = str, ::ValueT = Any, :$cmp!
 ]
   does Hash::Agnostic

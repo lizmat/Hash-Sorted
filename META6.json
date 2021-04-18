@@ -7,7 +7,7 @@
   ],
   "depends": [
     "Hash::Agnostic:ver<0.0.7>:auth<cpan:ELIZABETH>",
-    "Array::Sorted::Util:ver<0.0.2>:auth<cpan:ELIZABETH>"
+    "Array::Sorted::Util:ver<0.0.3>:auth<cpan:ELIZABETH>"
   ],
   "description": "customizable role for sorted Hashes",
   "license": "Artistic-2.0",
@@ -23,5 +23,5 @@
   ],
   "test-depends": [
   ],
-  "version": "0.0.1"
+  "version": "0.0.2"
 }

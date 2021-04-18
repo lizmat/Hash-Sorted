@@ -2,5 +2,8 @@ Revision history for Hash-Sorted
 
 {{$NEXT}}
 
+0.0.2  2021-04-18T20:29:46+02:00
+    - Up dependency of Array::Sorted::Util for better performance
+
 0.0.1  2021-04-18T13:17:43+02:00
     - Initial version
