@@ -5,7 +5,7 @@ use v6.c;
 use nqp;
 
 use Hash::Agnostic:ver<0.0.7>:auth<cpan:ELIZABETH>;
-use Array::Sorted::Util:ver<0.0.1>:auth<cpan:ELIZABETH>;
+use Array::Sorted::Util:ver<0.0.2>:auth<cpan:ELIZABETH>;
 
 my sub typed-array(Mu \type) {
     nqp::objprimspec(type) ?? array[type] !! Array[type]
