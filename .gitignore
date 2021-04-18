@@ -1,0 +1,5 @@
+.precomp/
+/Hash-Sorted-*
+/lib/Array/Sorted/Util.rakumod
+/lib/Hash/Agnostic.pm6
+/releases/

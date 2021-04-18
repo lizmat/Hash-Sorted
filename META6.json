@@ -1,0 +1,27 @@
+{
+  "auth": "cpan:ELIZABETH",
+  "authors": [
+    "Elizabeth Mattijsen"
+  ],
+  "build-depends": [
+  ],
+  "depends": [
+    "Hash::Agnostic:ver<0.0.7>:auth<cpan:ELIZABETH>",
+    "Array::Sorted::Util:ver<0.0.2>:auth<cpan:ELIZABETH>"
+  ],
+  "description": "customizable role for sorted Hashes",
+  "license": "Artistic-2.0",
+  "name": "Hash::Sorted",
+  "perl": "6.d",
+  "provides": {
+    "Hash::Sorted": "lib/Hash/Sorted.rakumod"
+  },
+  "resources": [
+  ],
+  "source-url": "",
+  "tags": [
+  ],
+  "test-depends": [
+  ],
+  "version": "0.0.1"
+}

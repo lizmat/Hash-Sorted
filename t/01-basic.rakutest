@@ -1,0 +1,30 @@
+use Test;
+use Hash::Sorted;
+
+plan 12;
+
+my %m is Hash::Sorted = b => 42, a => 666;  # [str,Any]
+is %m.elems, 2, 'Did we get right number of elems';
+is %m.end, 1, 'Did we get right index for last';
+is-deeply %m.keys, (my str @ = "a","b"),
+  'are keys sorted';
+is-deeply %m.values, Array[Any].new(666,42),
+  'are values sorted according to keys';
+is-deeply %m.head, Pair.new("a",666),
+  'is the first "a"';
+is-deeply %m.tail, Pair.new("b",42),
+  'is the last "b"';
+
+my %n is Hash::Sorted[int,str] = 666 => "a", 42 => "b";
+is %n.elems, 2, 'Did we get right number of elems';
+is %n.end, 1, 'Did we get right index for last';
+is-deeply %n.keys, (my int @ = 42,666),
+  'are keys sorted';
+is-deeply %n.values, (my str @ = "b","a"),
+  'are values sorted according to keys';
+is-deeply %n.head, Pair.new(42,"b"),
+  'is the first 42';
+is-deeply %n.tail, Pair.new(666,"a"),
+  'is the last 666';
+
+# vim: expandtab shiftwidth=4
