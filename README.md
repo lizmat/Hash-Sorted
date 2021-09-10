@@ -26,7 +26,7 @@ Since `Hash::Sorted` is a role, you can also use it as a base for creating your 
 AUTHOR
 ======
 
-Elizabeth Mattijsen <liz@wenzperl.nl>
+Elizabeth Mattijsen <liz@raku.rocks>
 
 Source can be located at: https://github.com/lizmat/Hash-Sorted . Comments and Pull Requests are welcome.
 

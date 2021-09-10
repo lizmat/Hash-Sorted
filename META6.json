@@ -1,13 +1,13 @@
 {
-  "auth": "cpan:ELIZABETH",
+  "auth": "zef:lizmat",
   "authors": [
     "Elizabeth Mattijsen"
   ],
   "build-depends": [
   ],
   "depends": [
-    "Hash::Agnostic:ver<0.0.7>:auth<cpan:ELIZABETH>",
-    "Array::Sorted::Util:ver<0.0.3>:auth<cpan:ELIZABETH>"
+    "Hash::Agnostic:ver<0.0.10>:auth<zef:lizmat>",
+    "Array::Sorted::Util:ver<0.0.7>:auth<zef:lizmat>"
   ],
   "description": "customizable role for sorted Hashes",
   "license": "Artistic-2.0",
@@ -23,5 +23,5 @@
   ],
   "test-depends": [
   ],
-  "version": "0.0.2"
+  "version": "0.0.3"
 }

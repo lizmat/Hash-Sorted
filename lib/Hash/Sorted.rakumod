@@ -4,8 +4,8 @@ use v6.c;
 # so it set up to be as performant as possible already using nqp ops.
 use nqp;
 
-use Hash::Agnostic:ver<0.0.7>:auth<cpan:ELIZABETH>;
-use Array::Sorted::Util:ver<0.0.3>:auth<cpan:ELIZABETH>;
+use Hash::Agnostic:ver<0.0.10>:auth<zef:lizmat>;
+use Array::Sorted::Util:ver<0.0.7>:auth<zef:lizmat>;
 
 my sub typed-array(Mu \type) {
     nqp::objprimspec(type) ?? array[type] !! Array[type]
@@ -43,7 +43,7 @@ my class KV does PredictiveIterator {
 }
 
 #--- Role using the standard &[cmp] --------------------------------------------
-role Hash::Sorted:ver<0.0.2>:auth<cpan:ELIZABETH>[
+role Hash::Sorted:ver<0.0.3>:auth<zef:lizmat>[
   ::KeyT = str, ::ValueT = Any
 ]
   does Hash::Agnostic
@@ -145,7 +145,7 @@ role Hash::Sorted:ver<0.0.2>:auth<cpan:ELIZABETH>[
 }
 
 #--- Role using a custom comparator --------------------------------------------
-role Hash::Sorted:ver<0.0.2>:auth<cpan:ELIZABETH>[
+role Hash::Sorted:ver<0.0.3>:auth<zef:lizmat>[
   ::KeyT = str, ::ValueT = Any, :$cmp!
 ]
   does Hash::Agnostic
@@ -275,7 +275,7 @@ your own custom implementations of hashes.
 
 =head1 AUTHOR
 
-Elizabeth Mattijsen <liz@wenzperl.nl>
+Elizabeth Mattijsen <liz@raku.rocks>
 
 Source can be located at: https://github.com/lizmat/Hash-Sorted .
 Comments and Pull Requests are welcome.

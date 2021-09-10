@@ -2,6 +2,12 @@ Revision history for Hash-Sorted
 
 {{$NEXT}}
 
+0.0.3  2021-09-10T11:10:03+02:00
+    - Change file extension to .rakumod
+    - Migrate to zef ecosystem
+    - Update email address
+    - Update dependencies
+
 0.0.2  2021-04-18T20:29:46+02:00
     - Up dependency of Array::Sorted::Util for better performance
 
