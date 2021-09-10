@@ -1,4 +1,4 @@
-use v6.c;
+use v6.d;
 
 # This modules is prepared to be incorporated into the Rakudo core,
 # so it set up to be as performant as possible already using nqp ops.
@@ -43,7 +43,7 @@ my class KV does PredictiveIterator {
 }
 
 #--- Role using the standard &[cmp] --------------------------------------------
-role Hash::Sorted:ver<0.0.3>:auth<zef:lizmat>[
+role Hash::Sorted:ver<0.0.4>:auth<zef:lizmat>[
   ::KeyT = str, ::ValueT = Any
 ]
   does Hash::Agnostic
@@ -145,7 +145,7 @@ role Hash::Sorted:ver<0.0.3>:auth<zef:lizmat>[
 }
 
 #--- Role using a custom comparator --------------------------------------------
-role Hash::Sorted:ver<0.0.3>:auth<zef:lizmat>[
+role Hash::Sorted:ver<0.0.4>:auth<zef:lizmat>[
   ::KeyT = str, ::ValueT = Any, :$cmp!
 ]
   does Hash::Agnostic
