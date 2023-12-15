@@ -4,8 +4,8 @@ use v6.d;
 # so it set up to be as performant as possible already using nqp ops.
 use nqp;
 
-use Hash::Agnostic:ver<0.0.10>:auth<zef:lizmat>;
-use Array::Sorted::Util:ver<0.0.7>:auth<zef:lizmat>;
+use Hash::Agnostic:ver<0.0.11>:auth<zef:lizmat>;
+use Array::Sorted::Util:ver<0.0.9>:auth<zef:lizmat>;
 
 my sub typed-array(Mu \type) {
     nqp::objprimspec(type) ?? array[type] !! Array[type]
@@ -43,11 +43,7 @@ my class KV does PredictiveIterator {
 }
 
 #--- Role using the standard &[cmp] --------------------------------------------
-role Hash::Sorted:ver<0.0.4>:auth<zef:lizmat>[
-  ::KeyT = str, ::ValueT = Any
-]
-  does Hash::Agnostic
-{
+role Hash::Sorted[::KeyT = str, ::ValueT = Any] does Hash::Agnostic {
 
 #- start of generated part -----------------------------------------------------
 #- Generated on 2021-04-18T11:48:33+02:00 by ./makeGENERIC.raku
@@ -145,11 +141,7 @@ role Hash::Sorted:ver<0.0.4>:auth<zef:lizmat>[
 }
 
 #--- Role using a custom comparator --------------------------------------------
-role Hash::Sorted:ver<0.0.4>:auth<zef:lizmat>[
-  ::KeyT = str, ::ValueT = Any, :$cmp!
-]
-  does Hash::Agnostic
-{
+role Hash::Sorted[::KeyT = str, ::ValueT = Any, :$cmp!] does Hash::Agnostic {
 
 #- start of generated part -----------------------------------------------------
 #- Generated on 2021-04-18T11:48:33+02:00 by ./makeGENERIC.raku
@@ -280,9 +272,13 @@ Elizabeth Mattijsen <liz@raku.rocks>
 Source can be located at: https://github.com/lizmat/Hash-Sorted .
 Comments and Pull Requests are welcome.
 
+If you like this module, or what I’m doing more generally, committing to a
+L<small sponsorship|https://github.com/sponsors/lizmat/>  would mean a great
+deal to me!
+
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2021 Elizabeth Mattijsen
+Copyright 2021, 2023 Elizabeth Mattijsen
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 

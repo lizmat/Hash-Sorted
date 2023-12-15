@@ -1,7 +1,7 @@
 use Test;
 use Hash::Sorted;
 
-plan 12;
+plan 15;
 
 my %m is Hash::Sorted = b => 42, a => 666;  # [str,Any]
 is %m.elems, 2, 'Did we get right number of elems';
@@ -16,8 +16,11 @@ is-deeply %m.tail, Pair.new("b",42),
   'is the last "b"';
 
 my %n is Hash::Sorted[int,str] = 666 => "a", 42 => "b";
-is %n.elems, 2, 'Did we get right number of elems';
-is %n.end, 1, 'Did we get right index for last';
+is-deeply %n.elems, 2, 'Did we get right number of elems';
+is-deeply +%n, 2, 'Did we get right number of elems implicitly';
+is-deeply %n.Int, 2, 'Did we get right number of elems explicitly';
+is-deeply ?%n, True, 'Did we get bool ok';
+is-deeply %n.end, 1, 'Did we get right index for last';
 is-deeply %n.keys, (my int @ = 42,666),
   'are keys sorted';
 is-deeply %n.values, (my str @ = "b","a"),
