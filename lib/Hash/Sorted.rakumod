@@ -4,7 +4,7 @@ use v6.d;
 # so it set up to be as performant as possible already using nqp ops.
 use nqp;
 
-use Hash::Agnostic:ver<0.0.11>:auth<zef:lizmat>;
+use Hash::Agnostic:ver<0.0.12>:auth<zef:lizmat>;
 use Array::Sorted::Util:ver<0.0.9>:auth<zef:lizmat>;
 
 my sub typed-array(Mu \type) {
@@ -278,7 +278,7 @@ deal to me!
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2021, 2023 Elizabeth Mattijsen
+Copyright 2021, 2023, 2024 Elizabeth Mattijsen
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 
