@@ -4,8 +4,8 @@ use v6.d;
 # so it set up to be as performant as possible already using nqp ops.
 use nqp;
 
-use Hash::Agnostic:ver<0.0.12>:auth<zef:lizmat>;
-use Array::Sorted::Util:ver<0.0.9>:auth<zef:lizmat>;
+use Hash::Agnostic:ver<0.0.14>:auth<zef:lizmat>;
+use Array::Sorted::Util:ver<0.0.10>:auth<zef:lizmat>;
 
 my sub typed-array(Mu \type) {
     nqp::objprimspec(type) ?? array[type] !! Array[type]
@@ -246,11 +246,15 @@ Hash::Sorted - customizable role for sorted Hashes
 
 =head1 SYNOPSIS
 
-  use Hash::Sorted;
+=begin code :lang<raku>
 
-  my %m is Hash::Sorted = a => 42, b => 666;  # [str,Any]
+use Hash::Sorted;
 
-  my %n is Hash::Sorted[int,str] = 42 => "a", 666 => "b";
+my %m is Hash::Sorted = a => 42, b => 666;  # [str,Any]
+
+my %n is Hash::Sorted[int,str] = 42 => "a", 666 => "b";
+
+=end code
 
 =head1 DESCRIPTION
 

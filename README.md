@@ -1,4 +1,4 @@
-[![Actions Status](https://github.com/lizmat/Hash-Sorted/workflows/test/badge.svg)](https://github.com/lizmat/Hash-Sorted/actions)
+[![Actions Status](https://github.com/lizmat/Hash-Sorted/actions/workflows/linux.yml/badge.svg)](https://github.com/lizmat/Hash-Sorted/actions) [![Actions Status](https://github.com/lizmat/Hash-Sorted/actions/workflows/macos.yml/badge.svg)](https://github.com/lizmat/Hash-Sorted/actions) [![Actions Status](https://github.com/lizmat/Hash-Sorted/actions/workflows/windows.yml/badge.svg)](https://github.com/lizmat/Hash-Sorted/actions)
 
 NAME
 ====
@@ -8,11 +8,13 @@ Hash::Sorted - customizable role for sorted Hashes
 SYNOPSIS
 ========
 
-    use Hash::Sorted;
+```raku
+use Hash::Sorted;
 
-    my %m is Hash::Sorted = a => 42, b => 666;  # [str,Any]
+my %m is Hash::Sorted = a => 42, b => 666;  # [str,Any]
 
-    my %n is Hash::Sorted[int,str] = 42 => "a", 666 => "b";
+my %n is Hash::Sorted[int,str] = 42 => "a", 666 => "b";
+```
 
 DESCRIPTION
 ===========
