@@ -4,7 +4,7 @@ use v6.d;
 # so it set up to be as performant as possible already using nqp ops.
 use nqp;
 
-use Hash::Agnostic:ver<0.0.14>:auth<zef:lizmat>;
+use Hash::Agnostic:ver<0.0.16>:auth<zef:lizmat>;
 use Array::Sorted::Util:ver<0.0.10>:auth<zef:lizmat>;
 
 my sub typed-array(Mu \type) {
@@ -62,22 +62,19 @@ role Hash::Sorted[::KeyT = str, ::ValueT = Any] does Hash::Agnostic {
     method keys(::?ROLE:D:) { @!keys }
 
 #---- Methods needed for consistency -------------------------------------------
-    method gist(::?ROLE:D:) {
+    multi method gist(::?ROLE:D:) {
         '{' ~ self.pairs.map( *.gist).join(", ") ~ '}'
     }
 
-    method Str(::?ROLE:D:) {
+    multi method Str(::?ROLE:D:) {
         self.pairs.join(" ")
     }
 
-    method perl(::?ROLE:D:) is DEPRECATED("raku") {
-        self.raku
-    }
-    method raku(::?ROLE:D:) {
-        self.perlseen(self.^name, {
+    multi method raku(::?ROLE:D:) {
+        self.rakuseen(self.^name, {
           ~ self.^name
           ~ '.new('
-          ~ self.pairs.map({nqp::decont($_).perl}).join(',')
+          ~ self.pairs.map({nqp::decont($_).rakuperl}).join(',')
           ~ ')'
         })
     }

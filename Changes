@@ -2,6 +2,10 @@ Revision history for Hash-Sorted
 
 {{$NEXT}}
 
+0.0.8  2024-08-10T13:11:35+02:00
+    - Up dependency on Hash::Agnostic to get fix for calling
+      .Str / .gist / .raku on type objects
+
 0.0.7  2024-07-21T12:02:49+02:00
     - Up dependency on Hash::Agnostic and Array::Sorted::Util
     - Modernize rakudoc

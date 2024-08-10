@@ -1,7 +1,7 @@
 use Test;
 use Hash::Sorted;
 
-plan 15;
+plan 21;
 
 my %m is Hash::Sorted = b => 42, a => 666;  # [str,Any]
 is %m.elems, 2, 'Did we get right number of elems';
@@ -29,5 +29,15 @@ is-deeply %n.head, Pair.new(42,"b"),
   'is the first 42';
 is-deeply %n.tail, Pair.new(666,"a"),
   'is the last 666';
+
+is-deeply Hash::Sorted.raku, 'Hash::Sorted', 'does .raku work on type object';
+quietly is-deeply Hash::Sorted.Str, '',       'does .Str  work on type object';
+is-deeply Hash::Sorted.gist, '(Sorted)',     'does .gist work on type object';
+
+class A does Hash::Sorted { }
+
+is-deeply A.raku,       'A', 'does .raku work on class type object';
+quietly is-deeply A.Str, '', 'does .Str  work on class type object';
+is-deeply A.gist,     '(A)', 'does .gist work on class type object';
 
 # vim: expandtab shiftwidth=4

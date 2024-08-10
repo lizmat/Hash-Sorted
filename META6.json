@@ -6,7 +6,7 @@
   "build-depends": [
   ],
   "depends": [
-    "Hash::Agnostic:ver<0.0.14>:auth<zef:lizmat>",
+    "Hash::Agnostic:ver<0.0.16>:auth<zef:lizmat>",
     "Array::Sorted::Util:ver<0.0.10>:auth<zef:lizmat>"
   ],
   "description": "customizable role for sorted Hashes",
@@ -20,8 +20,10 @@
   ],
   "source-url": "https://github.com/lizmat/Hash-Sorted.git",
   "tags": [
+    "HASH",
+    "SORT"
   ],
   "test-depends": [
   ],
-  "version": "0.0.7"
+  "version": "0.0.8"
 }
