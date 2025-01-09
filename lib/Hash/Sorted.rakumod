@@ -1,11 +1,9 @@
-use v6.d;
-
 # This modules is prepared to be incorporated into the Rakudo core,
 # so it set up to be as performant as possible already using nqp ops.
 use nqp;
 
-use Hash::Agnostic:ver<0.0.16>:auth<zef:lizmat>;
-use Array::Sorted::Util:ver<0.0.10>:auth<zef:lizmat>;
+use Hash::Agnostic:ver<0.0.16+>:auth<zef:lizmat>;
+use Array::Sorted::Util:ver<0.0.11+>:auth<zef:lizmat>;
 
 my sub typed-array(Mu \type) {
     nqp::objprimspec(type) ?? array[type] !! Array[type]
@@ -234,55 +232,5 @@ role Hash::Sorted[::KeyT = str, ::ValueT = Any, :$cmp!] does Hash::Agnostic {
         )
     }
 }
-
-=begin pod
-
-=head1 NAME
-
-Hash::Sorted - customizable role for sorted Hashes
-
-=head1 SYNOPSIS
-
-=begin code :lang<raku>
-
-use Hash::Sorted;
-
-my %m is Hash::Sorted = a => 42, b => 666;  # [str,Any]
-
-my %n is Hash::Sorted[int,str] = 42 => "a", 666 => "b";
-
-=end code
-
-=head1 DESCRIPTION
-
-This module provides the C<Hash::Sorted> role, that allows you to create
-a Hash that always keeps its keys in sorted order.  It also allows you to
-customize exactly how you would like to type your keys and/or your values.
-
-Internally, this implementation works off two arrays that are being kept
-in sync, so any standard constraints available to arrays, can be applied
-as types for the keys or values.
-
-Since C<Hash::Sorted> is a role, you can also use it as a base for creating
-your own custom implementations of hashes.
-
-=head1 AUTHOR
-
-Elizabeth Mattijsen <liz@raku.rocks>
-
-Source can be located at: https://github.com/lizmat/Hash-Sorted .
-Comments and Pull Requests are welcome.
-
-If you like this module, or what I’m doing more generally, committing to a
-L<small sponsorship|https://github.com/sponsors/lizmat/>  would mean a great
-deal to me!
-
-=head1 COPYRIGHT AND LICENSE
-
-Copyright 2021, 2023, 2024 Elizabeth Mattijsen
-
-This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
-
-=end pod
 
 # vim: ft=raku expandtab sw=4
